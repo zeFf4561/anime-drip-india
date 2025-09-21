@@ -14,9 +14,9 @@ const Homepage = () => {
         <div className="container mx-auto text-center">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent animate-fade-in">
-              Wear Your Anime.
+              Unleash the Dream.
               <br />
-              Live Your Story.
+              Wear Your Anime.
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in">
               Exclusive anime T-shirts from your favorite universes. Limited drops, endless hype.

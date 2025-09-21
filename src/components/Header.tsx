@@ -16,9 +16,9 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link to="/" className="flex items-center space-x-2">
-          <img src={logo} alt="Eternal Tees" className="h-8 w-8" />
+          <img src={logo} alt="Epic Threadz" className="h-8 w-8" />
           <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Eternal Tees
+            Epic Threadz
           </span>
         </Link>
 
