@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import logo from "@/assets/logo.png";
 import { useCart } from "@/hooks/useCart";
+import SearchBar from "@/components/SearchBar";
 
 const Header = () => {
   const location = useLocation();
@@ -14,13 +15,18 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link to="/" className="flex items-center space-x-2">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4 gap-4">
+        <Link to="/" className="flex items-center space-x-2 flex-shrink-0">
           <img src={logo} alt="Epic Threadz" className="h-8 w-8" />
           <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Epic Threadz
           </span>
         </Link>
+
+        {/* Search Bar - Hidden on small screens */}
+        <div className="hidden md:flex flex-1 max-w-md mx-4">
+          <SearchBar />
+        </div>
 
         <nav className="hidden md:flex items-center space-x-6">
           <Link
@@ -49,7 +55,7 @@ const Header = () => {
           </Link>
         </nav>
 
-        <Link to="/cart">
+        <Link to="/cart" className="flex-shrink-0">
           <Button variant="ghost" size="sm" className="relative">
             <ShoppingCart className="h-5 w-5" />
             {cartItemCount > 0 && (
@@ -62,6 +68,13 @@ const Header = () => {
             )}
           </Button>
         </Link>
+      </div>
+
+      {/* Mobile Search Bar */}
+      <div className="md:hidden border-t border-border bg-background/95 backdrop-blur">
+        <div className="container mx-auto px-4 py-3">
+          <SearchBar />
+        </div>
       </div>
     </header>
   );
