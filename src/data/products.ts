@@ -7,6 +7,7 @@ export interface Product {
   category: string;
   description: string;
   sizes: string[];
+  featured?: boolean;
 }
 
 // Import images
@@ -23,7 +24,8 @@ export const products: Product[] = [
     image: soloLevelingDesign,
     category: "solo-leveling",
     description: "100% premium cotton oversized tee featuring Sung Jin-Woo in his iconic pose. Perfect for true Solo Leveling fans.",
-    sizes: ["S", "M", "L", "XL", "XXL"]
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: true
   },
   {
     id: "2", 
@@ -32,7 +34,8 @@ export const products: Product[] = [
     image: narutoSilhouette,
     category: "naruto",
     description: "Minimalist silhouette design capturing the essence of Naruto's journey. Premium quality cotton with anime-inspired graphics.",
-    sizes: ["S", "M", "L", "XL", "XXL"]
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: true
   },
   {
     id: "3",
@@ -41,7 +44,8 @@ export const products: Product[] = [
     image: demonSlayerGroup,
     category: "demon-slayer",
     description: "Chibi-style group design featuring Tanjiro, Nezuko, Zenitsu, and Inosuke. Adorable and authentic anime artwork.",
-    sizes: ["S", "M", "L", "XL", "XXL"]
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: false
   },
   {
     id: "4",
@@ -50,7 +54,88 @@ export const products: Product[] = [
     image: onePieceProduct,
     category: "one-piece", 
     description: "Classic Straw Hat Pirates design with vintage anime aesthetics. Show your loyalty to Luffy's crew.",
-    sizes: ["S", "M", "L", "XL", "XXL"]
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: true
+  },
+  {
+    id: "5",
+    name: "Attack on Titan Scout Tee",
+    price: 1349,
+    image: narutoSilhouette,
+    category: "attack-on-titan",
+    description: "Survey Corps insignia with premium embroidery. For those who fight for humanity's freedom.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: false
+  },
+  {
+    id: "6",
+    name: "My Hero Academia Plus Ultra Tee",
+    price: 1199,
+    image: demonSlayerGroup,
+    category: "my-hero-academia",
+    description: "All Might inspired design with bold typography. Show your hero spirit.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: false
+  },
+  {
+    id: "7",
+    name: "Jujutsu Kaisen Cursed Energy Tee",
+    price: 1399,
+    image: soloLevelingDesign,
+    category: "jujutsu-kaisen",
+    description: "Gojo Satoru's domain expansion design. Unleash your cursed technique.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: false
+  },
+  {
+    id: "8",
+    name: "Tokyo Revengers Gang Tee",
+    price: 1249,
+    image: onePieceProduct,
+    category: "tokyo-revengers",
+    description: "Toman gang emblem with vintage wash finish. Time to ride with the crew.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: false
+  },
+  {
+    id: "9",
+    name: "Chainsaw Man Devil Hunter Tee",
+    price: 1399,
+    image: narutoSilhouette,
+    category: "chainsaw-man",
+    description: "Denji's chainsaw design with distressed graphics. Hunt devils in style.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: false
+  },
+  {
+    id: "10",
+    name: "Spy x Family Mission Tee",
+    price: 1199,
+    image: demonSlayerGroup,
+    category: "spy-x-family",
+    description: "Operation Strix themed design. Perfect for undercover family missions.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: false
+  },
+  {
+    id: "11",
+    name: "Fullmetal Alchemist Brotherhood Tee",
+    price: 1349,
+    image: soloLevelingDesign,
+    category: "fullmetal-alchemist",
+    description: "Transmutation circle design with metallic print. The law of equivalent exchange.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: false
+  },
+  {
+    id: "12",
+    name: "Hunter x Hunter Nen Ability Tee",
+    price: 1299,
+    image: onePieceProduct,
+    category: "hunter-x-hunter",
+    description: "Gon and Killua duo design. Master your Nen with this exclusive tee.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: false
   }
 ];
 
