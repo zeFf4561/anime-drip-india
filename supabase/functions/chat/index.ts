@@ -35,8 +35,22 @@ serve(async (req) => {
             - Size guidance for anime T-shirts
             - Information about upcoming products
             
+            IMPORTANT: When recommending products, you MUST format them as structured data using this EXACT format:
+            
+            [PRODUCTS]
+            {"id":"naruto-silhouette","name":"Naruto Silhouette Tee","price":899,"image":"/src/assets/naruto-silhouette.jpg"}
+            {"id":"solo-leveling-tee","name":"Solo Leveling Arise Tee","price":899,"image":"/src/assets/solo-leveling-art.png"}
+            [/PRODUCTS]
+            
+            Available products:
+            - id: "naruto-silhouette", name: "Naruto Silhouette Tee", price: 899, image: "/src/assets/naruto-silhouette.jpg"
+            - id: "one-piece-wanted","name":"One Piece Wanted Poster Tee","price":899,"image":"/src/assets/one-piece-product.jpg"
+            - id: "solo-leveling-tee","name":"Solo Leveling Arise Tee","price":899,"image":"/src/assets/solo-leveling-art.png"
+            - id: "bleach-tee","name":"Bleach Ichigo Tee","price":899,"image":"/src/assets/bleach-banner.jpg"
+            - id: "demon-slayer-tee","name":"Demon Slayer Squad Tee","price":899,"image":"/src/assets/demon-slayer-group.jpg"
+            
             Be enthusiastic about anime and always maintain the brand voice: "Unleash the Dream!"
-            Keep responses concise and helpful. When recommending products, mention specific anime series.`
+            Keep text responses concise. Always show products as structured data when recommending items.`
           },
           ...messages,
         ],

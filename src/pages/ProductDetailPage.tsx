@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -10,6 +10,7 @@ import { Check } from "lucide-react";
 
 const ProductDetailPage = () => {
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
   const [selectedSize, setSelectedSize] = useState<string>("");
   const { addItem } = useCart();
   const { toast } = useToast();
@@ -49,6 +50,27 @@ const ProductDetailPage = () => {
       title: "Added to cart!",
       description: `${product.name} (${selectedSize}) has been added to your cart.`,
     });
+  };
+
+  const handleBuyNow = () => {
+    if (!selectedSize) {
+      toast({
+        title: "Please select a size",
+        description: "Choose your preferred size before buying.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    addItem({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      size: selectedSize,
+    });
+
+    navigate('/checkout');
   };
 
   return (
@@ -120,14 +142,24 @@ const ProductDetailPage = () => {
               </CardContent>
             </Card>
 
-            {/* Add to Cart Button */}
-            <Button 
-              size="lg" 
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-6 text-lg transition-smooth"
-              onClick={handleAddToCart}
-            >
-              Add to Cart
-            </Button>
+            {/* Action Buttons */}
+            <div className="grid grid-cols-2 gap-4">
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="w-full font-semibold py-6 text-lg transition-smooth"
+                onClick={handleAddToCart}
+              >
+                Add to Cart
+              </Button>
+              <Button 
+                size="lg" 
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-6 text-lg transition-smooth"
+                onClick={handleBuyNow}
+              >
+                Buy Now
+              </Button>
+            </div>
 
             {/* Category Badge */}
             <div className="flex items-center gap-2">

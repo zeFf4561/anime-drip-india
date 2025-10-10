@@ -4,10 +4,19 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useToast } from "@/hooks/use-toast";
+import ChatProductCard from "./ChatProductCard";
+
+interface Product {
+  id: string;
+  name: string;
+  price: number;
+  image: string;
+}
 
 interface Message {
   role: "user" | "assistant";
   content: string;
+  products?: Product[];
 }
 
 const Chatbot = () => {
@@ -90,11 +99,30 @@ const Chatbot = () => {
             const content = parsed.choices?.[0]?.delta?.content as string | undefined;
             if (content) {
               assistantContent += content;
+              
+              // Parse products from content
+              let products: Product[] | undefined;
+              const productMatch = assistantContent.match(/\[PRODUCTS\]([\s\S]*?)\[\/PRODUCTS\]/);
+              if (productMatch) {
+                const productLines = productMatch[1].trim().split('\n').filter(line => line.trim());
+                products = productLines.map(line => {
+                  try {
+                    return JSON.parse(line.trim());
+                  } catch {
+                    return null;
+                  }
+                }).filter(Boolean) as Product[];
+              }
+              
+              // Remove product tags from display content
+              const displayContent = assistantContent.replace(/\[PRODUCTS\][\s\S]*?\[\/PRODUCTS\]/g, '').trim();
+              
               setMessages((prev) => {
                 const newMessages = [...prev];
                 newMessages[newMessages.length - 1] = {
                   role: "assistant",
-                  content: assistantContent,
+                  content: displayContent,
+                  products,
                 };
                 return newMessages;
               });
@@ -172,19 +200,27 @@ const Chatbot = () => {
           <ScrollArea className="flex-1 p-4" ref={scrollRef}>
             <div className="space-y-4">
               {messages.map((message, index) => (
-                <div
-                  key={index}
-                  className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
-                >
+                <div key={index} className="space-y-2">
                   <div
-                    className={`max-w-[80%] rounded-lg p-3 ${
-                      message.role === "user"
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-secondary text-secondary-foreground"
-                    }`}
+                    className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
                   >
-                    <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+                    <div
+                      className={`max-w-[80%] rounded-lg p-3 ${
+                        message.role === "user"
+                          ? "bg-primary text-primary-foreground"
+                          : "bg-secondary text-secondary-foreground"
+                      }`}
+                    >
+                      <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+                    </div>
                   </div>
+                  {message.products && message.products.length > 0 && (
+                    <div className="grid grid-cols-2 gap-2 pl-2">
+                      {message.products.map((product) => (
+                        <ChatProductCard key={product.id} {...product} />
+                      ))}
+                    </div>
+                  )}
                 </div>
               ))}
               {isLoading && (
