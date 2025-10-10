@@ -4,11 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useCart } from "@/hooks/useCart";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { MapPin, CreditCard, Loader2 } from "lucide-react";
+import { MapPin, CreditCard, Loader2, Smartphone, Building2, Wallet } from "lucide-react";
 
 const ImprovedCheckoutPage = () => {
   const { items, getTotalPrice, clearCart } = useCart();
@@ -16,6 +17,7 @@ const ImprovedCheckoutPage = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const [isOrdering, setIsOrdering] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState("cod");
   const [address, setAddress] = useState({
     street: "",
     city: "",
@@ -67,6 +69,8 @@ const ImprovedCheckoutPage = () => {
     setIsOrdering(true);
 
     try {
+      const paymentStatus = paymentMethod === "cod" ? "pending" : "completed";
+      
       // Create order
       const { data: order, error: orderError } = await supabase
         .from("orders")
@@ -74,8 +78,8 @@ const ImprovedCheckoutPage = () => {
           user_id: user!.id,
           total_amount: getTotalPrice(),
           status: "processing",
-          payment_status: "completed",
-          shipping_address: address,
+          payment_status: paymentStatus,
+          shipping_address: { ...address, payment_method: paymentMethod },
         })
         .select()
         .single();
@@ -190,12 +194,61 @@ const ImprovedCheckoutPage = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="bg-muted/30 p-4 rounded-lg">
-                  <p className="font-medium text-primary">Cash on Delivery</p>
-                  <p className="text-muted-foreground text-sm">
-                    Pay when you receive your order
-                  </p>
-                </div>
+                <RadioGroup value={paymentMethod} onValueChange={setPaymentMethod}>
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-3 border border-border rounded-lg p-4 hover:border-primary transition-colors cursor-pointer">
+                      <RadioGroupItem value="upi" id="upi" />
+                      <Label htmlFor="upi" className="flex items-center gap-3 cursor-pointer flex-1">
+                        <Smartphone className="h-5 w-5 text-primary" />
+                        <div>
+                          <p className="font-medium">UPI</p>
+                          <p className="text-muted-foreground text-xs">
+                            Pay via Google Pay, PhonePe, Paytm
+                          </p>
+                        </div>
+                      </Label>
+                    </div>
+
+                    <div className="flex items-center space-x-3 border border-border rounded-lg p-4 hover:border-primary transition-colors cursor-pointer">
+                      <RadioGroupItem value="card" id="card" />
+                      <Label htmlFor="card" className="flex items-center gap-3 cursor-pointer flex-1">
+                        <CreditCard className="h-5 w-5 text-primary" />
+                        <div>
+                          <p className="font-medium">Credit / Debit Card</p>
+                          <p className="text-muted-foreground text-xs">
+                            Visa, Mastercard, RuPay
+                          </p>
+                        </div>
+                      </Label>
+                    </div>
+
+                    <div className="flex items-center space-x-3 border border-border rounded-lg p-4 hover:border-primary transition-colors cursor-pointer">
+                      <RadioGroupItem value="netbanking" id="netbanking" />
+                      <Label htmlFor="netbanking" className="flex items-center gap-3 cursor-pointer flex-1">
+                        <Building2 className="h-5 w-5 text-primary" />
+                        <div>
+                          <p className="font-medium">Net Banking</p>
+                          <p className="text-muted-foreground text-xs">
+                            All major banks supported
+                          </p>
+                        </div>
+                      </Label>
+                    </div>
+
+                    <div className="flex items-center space-x-3 border border-border rounded-lg p-4 hover:border-primary transition-colors cursor-pointer">
+                      <RadioGroupItem value="cod" id="cod" />
+                      <Label htmlFor="cod" className="flex items-center gap-3 cursor-pointer flex-1">
+                        <Wallet className="h-5 w-5 text-primary" />
+                        <div>
+                          <p className="font-medium">Cash on Delivery</p>
+                          <p className="text-muted-foreground text-xs">
+                            Pay when you receive your order
+                          </p>
+                        </div>
+                      </Label>
+                    </div>
+                  </div>
+                </RadioGroup>
               </CardContent>
             </Card>
           </div>
