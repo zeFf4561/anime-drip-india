@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import Chatbot from "@/components/Chatbot";
 import Homepage from "./pages/Homepage";
 import CollectionsPage from "./pages/CollectionsPage";
+import CategoriesPage from "./pages/CategoriesPage";
 import CategoryPage from "./pages/CategoryPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import CartPage from "./pages/CartPage";
@@ -32,6 +33,7 @@ const App = () => (
               <Route path="/" element={<Homepage />} />
               <Route path="/auth" element={<AuthPage />} />
               <Route path="/collections" element={<CollectionsPage />} />
+              <Route path="/categories" element={<CategoriesPage />} />
               <Route path="/category/:slug" element={<CategoryPage />} />
               <Route path="/product/:id" element={<ProductDetailPage />} />
               <Route path="/cart" element={<CartPage />} />
@@ -39,7 +41,6 @@ const App = () => (
               <Route path="/order-confirmation" element={<OrderConfirmation />} />
               <Route path="/orders" element={<OrderHistoryPage />} />
               <Route path="/upcoming" element={<UpcomingPage />} />
-              <Route path="/categories" element={<Homepage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

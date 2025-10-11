@@ -8,6 +8,7 @@ export interface Product {
   description: string;
   sizes: string[];
   featured?: boolean;
+  type?: 'tshirt' | 'hoodie' | 'sweatshirt' | 'jacket';
 }
 
 // Import images
@@ -135,7 +136,74 @@ export const products: Product[] = [
     category: "hunter-x-hunter",
     description: "Gon and Killua duo design. Master your Nen with this exclusive tee.",
     sizes: ["S", "M", "L", "XL", "XXL"],
-    featured: false
+    featured: false,
+    type: 'tshirt'
+  },
+  {
+    id: "13",
+    name: "Naruto Akatsuki Hoodie",
+    price: 2299,
+    image: narutoSilhouette,
+    category: "naruto",
+    description: "Premium black hoodie with red cloud pattern. Stay warm with Akatsuki style.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: false,
+    type: 'hoodie'
+  },
+  {
+    id: "14",
+    name: "One Piece Wanted Poster Hoodie",
+    price: 2199,
+    image: onePieceProduct,
+    category: "one-piece",
+    description: "Luffy's bounty poster design hoodie. Show your pirate pride.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: false,
+    type: 'hoodie'
+  },
+  {
+    id: "15",
+    name: "Attack on Titan Wings of Freedom Hoodie",
+    price: 2399,
+    image: demonSlayerGroup,
+    category: "attack-on-titan",
+    description: "Survey Corps wings embroidered hoodie. Fight for humanity in comfort.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: false,
+    type: 'hoodie'
+  },
+  {
+    id: "16",
+    name: "Demon Slayer Hashira Sweatshirt",
+    price: 1899,
+    image: demonSlayerGroup,
+    category: "demon-slayer",
+    description: "Pillars insignia crewneck sweatshirt. Represent the strongest demon slayers.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: false,
+    type: 'sweatshirt'
+  },
+  {
+    id: "17",
+    name: "Jujutsu Kaisen Domain Expansion Hoodie",
+    price: 2499,
+    image: soloLevelingDesign,
+    category: "jujutsu-kaisen",
+    description: "Gojo's infinite void design premium hoodie. Ultimate sorcerer style.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: false,
+    type: 'hoodie'
+  },
+  {
+    id: "18",
+    name: "My Hero Academia UA Jacket",
+    price: 2899,
+    image: narutoSilhouette,
+    category: "my-hero-academia",
+    description: "UA High School varsity jacket. Train to become the number one hero.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: false,
+    type: 'jacket'
   }
 ];
 
@@ -167,6 +235,36 @@ export const categories = [
     slug: "demon-slayer",
     image: demonSlayerGroup,
     description: "Slay demons with style"
+  },
+  {
+    name: "Solo Leveling",
+    slug: "solo-leveling",
+    image: soloLevelingDesign,
+    description: "Arise and level up your wardrobe"
+  },
+  {
+    name: "Attack on Titan",
+    slug: "attack-on-titan",
+    image: narutoSilhouette,
+    description: "Freedom fighters collection"
+  },
+  {
+    name: "Jujutsu Kaisen",
+    slug: "jujutsu-kaisen",
+    image: soloLevelingDesign,
+    description: "Cursed techniques in fashion"
+  },
+  {
+    name: "My Hero Academia",
+    slug: "my-hero-academia",
+    image: demonSlayerGroup,
+    description: "Plus Ultra hero gear"
+  },
+  {
+    name: "Hunter x Hunter",
+    slug: "hunter-x-hunter",
+    image: onePieceProduct,
+    description: "Master your Nen ability"
   }
 ];
 
