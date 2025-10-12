@@ -133,6 +133,11 @@ All colors MUST be HSL.
     50% { transform: translateY(-10px); }
   }
   
+  @keyframes gradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
   .animate-glow-pulse {
     animation: glow-pulse 2s ease-in-out infinite;
   }

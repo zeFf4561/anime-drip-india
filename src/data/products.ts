@@ -9,6 +9,7 @@ export interface Product {
   sizes: string[];
   featured?: boolean;
   type?: 'tshirt' | 'hoodie' | 'sweatshirt' | 'jacket';
+  isAnime?: boolean;
 }
 
 // Import images
@@ -26,7 +27,8 @@ export const products: Product[] = [
     category: "solo-leveling",
     description: "100% premium cotton oversized tee featuring Sung Jin-Woo in his iconic pose. Perfect for true Solo Leveling fans.",
     sizes: ["S", "M", "L", "XL", "XXL"],
-    featured: true
+    featured: true,
+    isAnime: true
   },
   {
     id: "2", 
@@ -36,7 +38,8 @@ export const products: Product[] = [
     category: "naruto",
     description: "Minimalist silhouette design capturing the essence of Naruto's journey. Premium quality cotton with anime-inspired graphics.",
     sizes: ["S", "M", "L", "XL", "XXL"],
-    featured: true
+    featured: true,
+    isAnime: true
   },
   {
     id: "3",
@@ -46,7 +49,8 @@ export const products: Product[] = [
     category: "demon-slayer",
     description: "Chibi-style group design featuring Tanjiro, Nezuko, Zenitsu, and Inosuke. Adorable and authentic anime artwork.",
     sizes: ["S", "M", "L", "XL", "XXL"],
-    featured: false
+    featured: false,
+    isAnime: true
   },
   {
     id: "4",
@@ -56,7 +60,8 @@ export const products: Product[] = [
     category: "one-piece", 
     description: "Classic Straw Hat Pirates design with vintage anime aesthetics. Show your loyalty to Luffy's crew.",
     sizes: ["S", "M", "L", "XL", "XXL"],
-    featured: true
+    featured: true,
+    isAnime: true
   },
   {
     id: "5",
@@ -66,7 +71,8 @@ export const products: Product[] = [
     category: "attack-on-titan",
     description: "Survey Corps insignia with premium embroidery. For those who fight for humanity's freedom.",
     sizes: ["S", "M", "L", "XL", "XXL"],
-    featured: false
+    featured: false,
+    isAnime: true
   },
   {
     id: "6",
@@ -76,7 +82,8 @@ export const products: Product[] = [
     category: "my-hero-academia",
     description: "All Might inspired design with bold typography. Show your hero spirit.",
     sizes: ["S", "M", "L", "XL", "XXL"],
-    featured: false
+    featured: false,
+    isAnime: true
   },
   {
     id: "7",
@@ -86,7 +93,8 @@ export const products: Product[] = [
     category: "jujutsu-kaisen",
     description: "Gojo Satoru's domain expansion design. Unleash your cursed technique.",
     sizes: ["S", "M", "L", "XL", "XXL"],
-    featured: false
+    featured: false,
+    isAnime: true
   },
   {
     id: "8",
@@ -96,7 +104,8 @@ export const products: Product[] = [
     category: "tokyo-revengers",
     description: "Toman gang emblem with vintage wash finish. Time to ride with the crew.",
     sizes: ["S", "M", "L", "XL", "XXL"],
-    featured: false
+    featured: false,
+    isAnime: true
   },
   {
     id: "9",
@@ -106,7 +115,8 @@ export const products: Product[] = [
     category: "chainsaw-man",
     description: "Denji's chainsaw design with distressed graphics. Hunt devils in style.",
     sizes: ["S", "M", "L", "XL", "XXL"],
-    featured: false
+    featured: false,
+    isAnime: true
   },
   {
     id: "10",
@@ -116,7 +126,8 @@ export const products: Product[] = [
     category: "spy-x-family",
     description: "Operation Strix themed design. Perfect for undercover family missions.",
     sizes: ["S", "M", "L", "XL", "XXL"],
-    featured: false
+    featured: false,
+    isAnime: true
   },
   {
     id: "11",
@@ -126,7 +137,8 @@ export const products: Product[] = [
     category: "fullmetal-alchemist",
     description: "Transmutation circle design with metallic print. The law of equivalent exchange.",
     sizes: ["S", "M", "L", "XL", "XXL"],
-    featured: false
+    featured: false,
+    isAnime: true
   },
   {
     id: "12",
@@ -137,7 +149,8 @@ export const products: Product[] = [
     description: "Gon and Killua duo design. Master your Nen with this exclusive tee.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    type: 'tshirt'
+    type: 'tshirt',
+    isAnime: true
   },
   {
     id: "13",
@@ -148,7 +161,8 @@ export const products: Product[] = [
     description: "Premium black hoodie with red cloud pattern. Stay warm with Akatsuki style.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    type: 'hoodie'
+    type: 'hoodie',
+    isAnime: true
   },
   {
     id: "14",
@@ -159,7 +173,8 @@ export const products: Product[] = [
     description: "Luffy's bounty poster design hoodie. Show your pirate pride.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    type: 'hoodie'
+    type: 'hoodie',
+    isAnime: true
   },
   {
     id: "15",
@@ -170,7 +185,8 @@ export const products: Product[] = [
     description: "Survey Corps wings embroidered hoodie. Fight for humanity in comfort.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    type: 'hoodie'
+    type: 'hoodie',
+    isAnime: true
   },
   {
     id: "16",
@@ -181,7 +197,8 @@ export const products: Product[] = [
     description: "Pillars insignia crewneck sweatshirt. Represent the strongest demon slayers.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    type: 'sweatshirt'
+    type: 'sweatshirt',
+    isAnime: true
   },
   {
     id: "17",
@@ -192,7 +209,8 @@ export const products: Product[] = [
     description: "Gojo's infinite void design premium hoodie. Ultimate sorcerer style.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    type: 'hoodie'
+    type: 'hoodie',
+    isAnime: true
   },
   {
     id: "18",
@@ -203,7 +221,8 @@ export const products: Product[] = [
     description: "UA High School varsity jacket. Train to become the number one hero.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    type: 'jacket'
+    type: 'jacket',
+    isAnime: true
   },
   // Meme Culture Products
   {
@@ -215,7 +234,8 @@ export const products: Product[] = [
     description: "When your portfolio is green. Classic internet meme in wearable form.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    type: 'tshirt'
+    type: 'tshirt',
+    isAnime: false
   },
   {
     id: "20",
@@ -226,7 +246,8 @@ export const products: Product[] = [
     description: "Everything is on fire but we're staying calm. Iconic meme culture.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    type: 'tshirt'
+    type: 'tshirt',
+    isAnime: false
   },
   {
     id: "21",
@@ -237,7 +258,8 @@ export const products: Product[] = [
     description: "The legendary meme that started it all. Premium quality print.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    type: 'tshirt'
+    type: 'tshirt',
+    isAnime: false
   },
   // Minimalist Products
   {
@@ -249,7 +271,8 @@ export const products: Product[] = [
     description: "Single continuous line creates beauty. Minimalist elegance at its finest.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: true,
-    type: 'tshirt'
+    type: 'tshirt',
+    isAnime: false
   },
   {
     id: "23",
@@ -260,7 +283,8 @@ export const products: Product[] = [
     description: "Simple polygonal mountain design. Clean and modern aesthetic.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    type: 'tshirt'
+    type: 'tshirt',
+    isAnime: false
   },
   {
     id: "24",
@@ -271,7 +295,8 @@ export const products: Product[] = [
     description: "Japanese enso circle symbolizing enlightenment. Pure minimalism.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    type: 'tshirt'
+    type: 'tshirt',
+    isAnime: false
   },
   // Vintage Streetwear Products
   {
@@ -283,7 +308,8 @@ export const products: Product[] = [
     description: "Synthwave aesthetic meets streetwear. Retro vibes from the 80s.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    type: 'tshirt'
+    type: 'tshirt',
+    isAnime: false
   },
   {
     id: "26",
@@ -294,7 +320,8 @@ export const products: Product[] = [
     description: "Classic cassette player design. Old school hip-hop culture.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    type: 'tshirt'
+    type: 'tshirt',
+    isAnime: false
   },
   {
     id: "27",
@@ -305,7 +332,8 @@ export const products: Product[] = [
     description: "Classic arcade cabinet graphics. Gaming meets fashion.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    type: 'hoodie'
+    type: 'hoodie',
+    isAnime: false
   },
   // Motivational Products
   {
@@ -317,7 +345,8 @@ export const products: Product[] = [
     description: "Bold typography for go-getters. Wear your ambition proudly.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    type: 'tshirt'
+    type: 'tshirt',
+    isAnime: false
   },
   {
     id: "29",
@@ -328,7 +357,8 @@ export const products: Product[] = [
     description: "Inspiring message in elegant design. Fuel your dreams daily.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    type: 'tshirt'
+    type: 'tshirt',
+    isAnime: false
   },
   {
     id: "30",
@@ -339,7 +369,8 @@ export const products: Product[] = [
     description: "Keep your eyes on the prize. Motivational streetwear at its best.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    type: 'hoodie'
+    type: 'hoodie',
+    isAnime: false
   },
   // Retro Gaming Products
   {
@@ -351,7 +382,8 @@ export const products: Product[] = [
     description: "8-bit life meter design. Gamers know the struggle.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    type: 'tshirt'
+    type: 'tshirt',
+    isAnime: false
   },
   {
     id: "32",
@@ -362,7 +394,8 @@ export const products: Product[] = [
     description: "Classic arcade game over screen. Nostalgic gaming vibes.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    type: 'tshirt'
+    type: 'tshirt',
+    isAnime: false
   },
   {
     id: "33",
@@ -373,7 +406,8 @@ export const products: Product[] = [
     description: "Vintage gaming controller design. Perfect for retro gamers.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: false,
-    type: 'hoodie'
+    type: 'hoodie',
+    isAnime: false
   }
 ];
 
@@ -382,92 +416,114 @@ export const products: Product[] = [
 import onePieceBanner from "@/assets/one-piece-banner.jpg";
 import bleachBanner from "@/assets/bleach-banner.jpg";
 
-export const categories = [
+export interface Category {
+  name: string;
+  slug: string;
+  image: string;
+  description: string;
+  isAnime?: boolean;
+}
+
+export const categories: Category[] = [
   // Anime Categories
   {
     name: "One Piece",
     slug: "one-piece", 
     image: onePieceBanner,
-    description: "Sail with the Straw Hat Pirates"
+    description: "Sail with the Straw Hat Pirates",
+    isAnime: true
   },
   {
     name: "Naruto",
     slug: "naruto",
     image: narutoSilhouette, 
-    description: "Ninja way of the Hidden Leaf"
+    description: "Ninja way of the Hidden Leaf",
+    isAnime: true
   },
   {
     name: "Bleach",
     slug: "bleach",
     image: bleachBanner,
-    description: "Soul Reaper battles await"
+    description: "Soul Reaper battles await",
+    isAnime: true
   },
   {
     name: "Demon Slayer", 
     slug: "demon-slayer",
     image: demonSlayerGroup,
-    description: "Slay demons with style"
+    description: "Slay demons with style",
+    isAnime: true
   },
   {
     name: "Solo Leveling",
     slug: "solo-leveling",
     image: soloLevelingDesign,
-    description: "Arise and level up your wardrobe"
+    description: "Arise and level up your wardrobe",
+    isAnime: true
   },
   {
     name: "Attack on Titan",
     slug: "attack-on-titan",
     image: narutoSilhouette,
-    description: "Freedom fighters collection"
+    description: "Freedom fighters collection",
+    isAnime: true
   },
   {
     name: "Jujutsu Kaisen",
     slug: "jujutsu-kaisen",
     image: soloLevelingDesign,
-    description: "Cursed techniques in fashion"
+    description: "Cursed techniques in fashion",
+    isAnime: true
   },
   {
     name: "My Hero Academia",
     slug: "my-hero-academia",
     image: demonSlayerGroup,
-    description: "Plus Ultra hero gear"
+    description: "Plus Ultra hero gear",
+    isAnime: true
   },
   {
     name: "Hunter x Hunter",
     slug: "hunter-x-hunter",
     image: onePieceProduct,
-    description: "Master your Nen ability"
+    description: "Master your Nen ability",
+    isAnime: true
   },
   // New Non-Anime Categories
   {
     name: "Meme Culture",
     slug: "meme-culture",
     image: demonSlayerGroup,
-    description: "Internet humor you can wear"
+    description: "Internet humor you can wear",
+    isAnime: false
   },
   {
     name: "Minimalist",
     slug: "minimalist",
     image: narutoSilhouette,
-    description: "Less is more in design"
+    description: "Less is more in design",
+    isAnime: false
   },
   {
     name: "Vintage Streetwear",
     slug: "vintage-streetwear",
     image: soloLevelingDesign,
-    description: "Classic urban style"
+    description: "Classic urban style",
+    isAnime: false
   },
   {
     name: "Motivational",
     slug: "motivational",
     image: onePieceBanner,
-    description: "Wear your inspiration daily"
+    description: "Wear your inspiration daily",
+    isAnime: false
   },
   {
     name: "Retro Gaming",
     slug: "retro-gaming",
     image: bleachBanner,
-    description: "Level up your wardrobe"
+    description: "Level up your wardrobe",
+    isAnime: false
   }
 ];
 
